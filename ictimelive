@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>IC Time Live</title>
+<link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
+</head>
+<body>
+
+<video id="icc" class="video-js vjs-default-skin vjs-fill vjs-big-play-centered" autoplay controls>
+<source type="application/x-mpegURL" src="https://timetv.cloudpub.ru/live/hls/stream.m3u8">
+</video>
+
+
+<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
+<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+<script>
+
+var player = videojs('icc');
+player.play();
+
+</script>
+</body>
+</html>
