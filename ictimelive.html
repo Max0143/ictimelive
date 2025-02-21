@@ -1,23 +1,28 @@
-<html>
-<head>
-<title>IC Time Live</title>
-<link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
-</head>
-<body>
 
-<video id="icc" class="video-js vjs-default-skin vjs-fill vjs-big-play-centered" autoplay controls>
-<source type="application/x-mpegURL" src="https://timetv.cloudpub.ru/live/hls/stream.m3u8">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelementplayer.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js"></script>
+
+
+<video id="player12" width="100%" height="100%" controls class="mejs__player">
+    <source src="https://timetv.cloudpub.ru/live/hls/stream.m3u8" type="video/mp4">
+    <!-- You can add more sources for different formats here -->
 </video>
 
 
-<script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
-<script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var player = new MediaElementPlayer('player12', {
+            // Options
+            features: ['playpause', 'current', 'progress', 'duration', 'volume'],
+            success: function(mediaElement, originalNode, instance) {
+                // alert('Done')
+            },
+            error: function() {
+                // Handle error here
+                              //alert('Error Done')
 
-var player = videojs('icc');
-player.play();
-
+            }
+        });
+    });
 </script>
-</body>
-</html>
