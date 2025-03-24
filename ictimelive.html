@@ -1,34 +1,25 @@
+
 <title>IC Time | Live</title>
-<script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
-<video id="video-id"><source src="https://timetv.loophole.site/live/hls/stream.m3u8" type="video.mp4" />
+<script src="https://ssl.p.jwpcdn.com/player/v/8.22.0/jwplayer.js"></script>
+<div id="player"></div>
 <script>
-    var myFP = fluidPlayer(
-        'video-id',	{
-	"layoutControls": {
-		"controlBar": {
-			"autoHideTimeout": 3,
-			"animated": true,
-			"autoHide": true
-		},
-		"htmlOnPauseBlock": {
-			"html": null,
-			"height": null,
-			"width": null
-		},
-		"autoPlay": true,
-		"mute": true,
-		"allowTheatre": true,
-		"playPauseAnimation": true,
-		"playbackRateEnabled": true,
-		"allowDownload": false,
-		"playButtonShowing": false,
-		"fillToContainer": true,
-		"posterImage": ""
-	},
-	"vastOptions": {
-		"adList": [],
-		"adCTAText": false,
-		"adCTATextPosition": ""
-	}
-});
-    </script>
+  var jwp = jwplayer('player');
+  jwp.setup({
+    width: "100%",
+    title: "",
+    height: "100%",
+    key: "cLGMn8T20tGvW+0eXPhq4NNmLB57TrscPjd1IyJF84o=",
+    sources: [
+      {file: "https://timetv.loophole.site/live/hls/stream.m3u8",  type:"mp4",label:"480p", default: "true"},
+      {file: "",  type:"mp4", label:"720p"},
+      {file: "", type:"mp4", label:"1080p"}
+    ],
+    image: "",
+    sharing: {
+      heading: "Paylas",
+      link: "link-url",
+      sites:["facebook","twitter","googleplus","tumblr","pinterest","reddit","linkedin","email"]
+    },
+    primary: "html5"
+  });
+	  </script>
