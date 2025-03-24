@@ -1,28 +1,34 @@
-<title>IC Time Live</title>
- 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelementplayer.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js"></script>
+<html>
+<body>
+<title>IC Time | Live</title></head>
+<div align="center" class="fullscreen">
+    <div id="player-wrapper" class="fullscreen">
+  </div>
+  </div>
+  
+   <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dash-shaka-playback@latest/dist/dash-shaka-playback.min.js"></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+  document.addEventListener("DOMContentLoaded", function() {
+    console.log('Clappr version ' + Clappr.version);
 
-
-<video id="player12" width="100%" height="100%" controls class="mejs__player">
-    <source src="https://timetv.loophole.site/live/hls/stream.m3u8" type="video/mp4">
-    <!-- You can add more sources for different formats here -->
-</video>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var player = new MediaElementPlayer('player12', {
-            // Options
-            features: ['playpause', 'current', 'progress', 'duration', 'volume'],
-            success: function(mediaElement, originalNode, instance) {
-                // alert('Done')
-            },
-            error: function() {
-                // Handle error here
-                              //alert('Error Done')
-
-            }
-        });
+    var player = new Clappr.Player({
+      source:'https://timetv.loophole.site/live/hls/stream.m3u8',
+      parentId: '#player-wrapper',
+      plugins: [
+        LevelSelector,
+        DashShakaPlayback,
+      ],
+      width: '100%',
+      height: '100%',
+      hideMediaControl: true,
+      autoPlay: true
     });
-</script>
+
+  });
+  </script>
+
+</body>
+ </html>
