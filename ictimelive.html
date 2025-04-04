@@ -1,25 +1,14 @@
+<html>
+   
+<head>
+    <script src="playerjs (1).js" type="text/javascript"></script>  
+    </head>
+<body>   
+    <div id="player"></div>
 
-<title>IC Time | Live</title>
-<script src="https://ssl.p.jwpcdn.com/player/v/8.22.0/jwplayer.js"></script>
-<div id="player"></div>
 <script>
-  var jwp = jwplayer('player');
-  jwp.setup({
-    width: "100%",
-    title: "",
-    height: "100%",
-    key: "cLGMn8T20tGvW+0eXPhq4NNmLB57TrscPjd1IyJF84o=",
-    sources: [
-      {file: "https://timetv.loophole.site/live/hls/stream.m3u8",  type:"mp4",label:"480p", default: "true"},
-      {file: "",  type:"mp4", label:"720p"},
-      {file: "", type:"mp4", label:"1080p"}
-    ],
-    image: "",
-    sharing: {
-      heading: "Paylas",
-      link: "link-url",
-      sites:["facebook","twitter","googleplus","tumblr","pinterest","reddit","linkedin","email"]
-    },
-    primary: "html5"
-  });
-	  </script>
+   var player = new Playerjs({id:"player", file:"https://timetv.loophole.site/live/hls/stream.m3u8"});
+</script>
+</body>
+
+</html>
